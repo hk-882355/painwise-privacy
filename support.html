@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PainWise - サポート / Support</title>
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --text: #333333;
+            --text-secondary: #666666;
+            --border: #e0e0e0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a2e;
+                --card: #16213e;
+                --text: #e0e0e0;
+                --text-secondary: #a0a0a0;
+                --border: #2a2a4a;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 1.8em;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-bottom: 32px;
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 1.3em;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+        }
+        p, li { margin-bottom: 8px; }
+        ul { padding-left: 24px; }
+        .lang-toggle {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .lang-toggle button {
+            padding: 8px 20px;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--primary);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .lang-toggle button.active {
+            background: var(--primary);
+            color: white;
+        }
+        .section-ja, .section-en { display: none; }
+        .section-ja.active, .section-en.active { display: block; }
+        .faq-item {
+            background: var(--bg);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+        }
+        .faq-item summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-item summary::after {
+            content: "+";
+            font-size: 1.2em;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+        .faq-item p {
+            margin-top: 12px;
+            color: var(--text-secondary);
+        }
+        .contact-box {
+            background: var(--bg);
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-top: 16px;
+        }
+        .contact-box a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        .nav-link {
+            display: inline-block;
+            margin-top: 24px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .nav-link:hover {
+            text-decoration: underline;
+        }
+        .version-info {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PainWise</h1>
+        <p class="subtitle">Support / サポート</p>
+
+        <div class="lang-toggle">
+            <button id="btn-ja" class="active" onclick="switchLang('ja')">日本語</button>
+            <button id="btn-en" onclick="switchLang('en')">English</button>
+        </div>
+
+        <!-- Japanese -->
+        <div class="section-ja active">
+            <h2>よくある質問（FAQ）</h2>
+
+            <details class="faq-item">
+                <summary>PainWiseとはどんなアプリですか？</summary>
+                <p>PainWiseは、気圧変化と体調（痛み）の相関を記録・分析するiOSアプリです。毎日の痛みレベルを記録し、気象データと照らし合わせることで、痛みの傾向やパターンを発見できます。</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>データはどこに保存されますか？</summary>
+                <p>すべてのデータはお使いのiPhone内（ローカル）に保存されます。外部サーバーに個人データが送信されることはありません。詳しくは<a href="index.html">プライバシーポリシー</a>をご確認ください。</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>位置情報はなぜ必要ですか？</summary>
+                <p>お住まいの地域の気圧・天気データを取得するために使用します。位置情報は「使用中のみ」アクセスし、サーバーに送信されることはありません。</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>プレミアム機能には何が含まれますか？</summary>
+                <p>プレミアムでは以下の機能が利用できます：</p>
+                <ul>
+                    <li>5日間の天気予報と痛み予測</li>
+                    <li>詳細な分析レポート</li>
+                    <li>PDFエクスポート（医師との共有に便利）</li>
+                    <li>HealthKit連携（睡眠・歩数・心拍数の自動取得）</li>
+                </ul>
+            </details>
+
+            <details class="faq-item">
+                <summary>サブスクリプションをキャンセルするには？</summary>
+                <p>iPhoneの「設定」アプリ → お名前 → 「サブスクリプション」から、PainWiseのサブスクリプションを管理・キャンセルできます。次回更新日の24時間前までにキャンセルすれば、次の期間の課金は発生しません。</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>購入を復元するには？</summary>
+                <p>アプリ内のプレミアム画面で「購入を復元」ボタンをタップしてください。同じApple IDでサインインしていれば、以前の購入が復元されます。</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>データを削除するには？</summary>
+                <p>個別の記録は履歴画面から削除できます。すべてのデータを削除するには、アプリをアンインストールしてください。</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>HealthKit連携がうまくいきません</summary>
+                <p>iPhoneの「設定」→「ヘルスケア」→「データアクセスとデバイス」→「PainWise」で、必要なデータ（歩数、睡眠、心拍数）へのアクセスが許可されているか確認してください。</p>
+            </details>
+
+            <h2>お問い合わせ</h2>
+            <p>上記で解決しない場合は、以下からお問い合わせください。</p>
+            <div class="contact-box">
+                <p><strong>PainWise サポート</strong></p>
+                <p>GitHub Issues: <a href="https://github.com/hk-882355/painwise-privacy/issues" target="_blank">問題を報告する</a></p>
+            </div>
+
+            <a href="index.html" class="nav-link">← プライバシーポリシーを見る</a>
+        </div>
+
+        <!-- English -->
+        <div class="section-en">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+
+            <details class="faq-item">
+                <summary>What is PainWise?</summary>
+                <p>PainWise is an iOS app that records and analyzes the correlation between barometric pressure changes and physical conditions (pain). By recording your daily pain levels and comparing them with weather data, you can discover pain trends and patterns.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Where is my data stored?</summary>
+                <p>All data is stored locally on your iPhone. No personal data is sent to external servers. Please see our <a href="index.html">Privacy Policy</a> for details.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>Why does the app need my location?</summary>
+                <p>Your location is used to fetch local barometric pressure and weather data. Location is only accessed "while in use" and is never sent to our servers.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>What's included in Premium?</summary>
+                <p>Premium unlocks the following features:</p>
+                <ul>
+                    <li>5-day weather forecast with pain predictions</li>
+                    <li>Detailed analysis reports</li>
+                    <li>PDF export (convenient for sharing with doctors)</li>
+                    <li>HealthKit integration (automatic step, sleep, and heart rate tracking)</li>
+                </ul>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I cancel my subscription?</summary>
+                <p>Go to iPhone Settings → Your Name → Subscriptions to manage or cancel your PainWise subscription. Cancel at least 24 hours before the next renewal date to avoid being charged for the next period.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I restore my purchase?</summary>
+                <p>Tap the "Restore Purchases" button on the Premium screen in the app. Your previous purchase will be restored as long as you're signed in with the same Apple ID.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>How do I delete my data?</summary>
+                <p>Individual records can be deleted from the history screen. To delete all data, uninstall the app from your device.</p>
+            </details>
+
+            <details class="faq-item">
+                <summary>HealthKit integration isn't working</summary>
+                <p>Go to iPhone Settings → Health → Data Access & Devices → PainWise and make sure access to the required data (steps, sleep, heart rate) is enabled.</p>
+            </details>
+
+            <h2>Contact Us</h2>
+            <p>If the above doesn't resolve your issue, please contact us below.</p>
+            <div class="contact-box">
+                <p><strong>PainWise Support</strong></p>
+                <p>GitHub Issues: <a href="https://github.com/hk-882355/painwise-privacy/issues" target="_blank">Report an Issue</a></p>
+            </div>
+
+            <a href="index.html" class="nav-link">← View Privacy Policy</a>
+        </div>
+
+        <div class="version-info">
+            <p>PainWise v1.0</p>
+            <p>Last Updated / 最終更新: 2026-02-09</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.section-ja, .section-en').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-toggle button').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.section-' + lang).forEach(el => el.classList.add('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+    </script>
+</body>
+</html>
