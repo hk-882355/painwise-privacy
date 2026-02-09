@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PainWise - Privacy Policy / プライバシーポリシー</title>
+    <style>
+        :root {
+            --primary: #4CAF50;
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --text: #333333;
+            --text-secondary: #666666;
+            --border: #e0e0e0;
+        }
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #1a1a2e;
+                --card: #16213e;
+                --text: #e0e0e0;
+                --text-secondary: #a0a0a0;
+                --border: #2a2a4a;
+            }
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card);
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: var(--primary);
+            font-size: 1.8em;
+            margin-bottom: 8px;
+        }
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            margin-bottom: 32px;
+        }
+        h2 {
+            color: var(--primary);
+            font-size: 1.3em;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border);
+        }
+        h3 {
+            font-size: 1.1em;
+            margin-top: 20px;
+            margin-bottom: 8px;
+        }
+        p, li { margin-bottom: 8px; }
+        ul { padding-left: 24px; }
+        .lang-toggle {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .lang-toggle button {
+            padding: 8px 20px;
+            border: 2px solid var(--primary);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--primary);
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .lang-toggle button.active {
+            background: var(--primary);
+            color: white;
+        }
+        .section-ja, .section-en { display: none; }
+        .section-ja.active, .section-en.active { display: block; }
+        .effective-date {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text-secondary);
+            font-size: 0.85em;
+        }
+        .contact-box {
+            background: var(--bg);
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin-top: 12px;
+        }
+        .contact-box a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>PainWise</h1>
+        <p class="subtitle">Privacy Policy / プライバシーポリシー</p>
+
+        <div class="lang-toggle">
+            <button id="btn-ja" class="active" onclick="switchLang('ja')">日本語</button>
+            <button id="btn-en" onclick="switchLang('en')">English</button>
+        </div>
+
+        <!-- Japanese -->
+        <div class="section-ja active">
+            <h2>1. はじめに</h2>
+            <p>PainWise（以下「本アプリ」）は、気圧変化と体調の相関を記録・分析するiOSアプリケーションです。本プライバシーポリシーは、本アプリにおける個人情報の取り扱いについて説明します。</p>
+
+            <h2>2. 収集するデータ</h2>
+
+            <h3>2.1 ユーザーが入力するデータ</h3>
+            <ul>
+                <li><strong>痛みの記録</strong>: 痛みレベル（0〜10）、痛みの部位、痛みの種類、メモ</li>
+                <li><strong>プロフィール情報</strong>: ニックネーム（任意）</li>
+            </ul>
+
+            <h3>2.2 自動的に取得するデータ</h3>
+            <ul>
+                <li><strong>位置情報</strong>: 現在地の気圧・天気データを取得するために使用します（使用中のみ）。位置情報そのものはサーバーに送信されません。</li>
+                <li><strong>気象データ</strong>: 気圧、気温、湿度、天気の状態（OpenWeatherMap APIを通じて取得）</li>
+                <li><strong>ヘルスケアデータ</strong>（プレミアム機能・ユーザー許可時のみ）: 歩数、睡眠時間、心拍数（Apple HealthKit経由）</li>
+            </ul>
+
+            <h3>2.3 分析データ</h3>
+            <ul>
+                <li><strong>Firebase Analytics</strong>: アプリの使用状況（匿名化された利用統計）</li>
+                <li><strong>Firebase Crashlytics</strong>: クラッシュレポート（アプリの安定性向上のため）</li>
+            </ul>
+
+            <h2>3. データの保存場所</h2>
+            <ul>
+                <li>痛みの記録、プロフィール情報、設定は<strong>すべてデバイス内（ローカル）</strong>に保存されます。</li>
+                <li>外部サーバーに個人データを送信することはありません（Firebase Analytics/Crashlyticsの匿名データを除く）。</li>
+                <li>気象データの取得時、OpenWeatherMap APIに緯度・経度を送信しますが、ユーザーを特定する情報は含まれません。</li>
+            </ul>
+
+            <h2>4. データの利用目的</h2>
+            <ul>
+                <li>痛みと気圧変化の相関分析</li>
+                <li>痛みの予測・予防アドバイスの提供</li>
+                <li>PDFレポートの生成（ユーザーのデバイス内で処理）</li>
+                <li>アプリの品質向上・バグ修正</li>
+            </ul>
+
+            <h2>5. 第三者サービス</h2>
+            <p>本アプリは以下の第三者サービスを利用しています。各サービスのプライバシーポリシーもご確認ください。</p>
+            <ul>
+                <li><strong>OpenWeatherMap</strong>: 気象データの取得 — <a href="https://openweather.co.uk/privacy-policy" target="_blank">プライバシーポリシー</a></li>
+                <li><strong>Firebase (Google)</strong>: Analytics、Crashlytics — <a href="https://firebase.google.com/support/privacy" target="_blank">プライバシーポリシー</a></li>
+                <li><strong>Apple HealthKit</strong>: 健康データの取得 — <a href="https://www.apple.com/legal/privacy/" target="_blank">Appleプライバシーポリシー</a></li>
+            </ul>
+
+            <h2>6. データの共有</h2>
+            <p>本アプリは、ユーザーの個人データを第三者に販売、貸与、共有することはありません。Firebase Analytics/Crashlyticsによる匿名化された利用データのみが送信されます。</p>
+
+            <h2>7. データの削除</h2>
+            <ul>
+                <li>アプリ内の個別の記録は、履歴画面から削除できます。</li>
+                <li>アプリをアンインストールすることで、デバイス内の全データが削除されます。</li>
+            </ul>
+
+            <h2>8. お子様のプライバシー</h2>
+            <p>本アプリは13歳未満のお子様を対象としていません。13歳未満のお子様の個人情報を意図的に収集することはありません。</p>
+
+            <h2>9. プライバシーポリシーの変更</h2>
+            <p>本ポリシーは、必要に応じて更新される場合があります。重要な変更がある場合は、アプリ内で通知します。</p>
+
+            <h2>10. お問い合わせ</h2>
+            <p>プライバシーに関するご質問やご要望がございましたら、以下にご連絡ください。</p>
+            <div class="contact-box">
+                <p>PainWise サポート</p>
+                <p>GitHub: <a href="https://github.com/hk-882355/painwise-privacy/issues" target="_blank">Issues</a></p>
+            </div>
+        </div>
+
+        <!-- English -->
+        <div class="section-en">
+            <h2>1. Introduction</h2>
+            <p>PainWise ("the App") is an iOS application that records and analyzes the correlation between barometric pressure changes and physical conditions. This Privacy Policy explains how personal information is handled in the App.</p>
+
+            <h2>2. Data We Collect</h2>
+
+            <h3>2.1 User-Provided Data</h3>
+            <ul>
+                <li><strong>Pain Records</strong>: Pain level (0-10), body parts, pain types, notes</li>
+                <li><strong>Profile Information</strong>: Nickname (optional)</li>
+            </ul>
+
+            <h3>2.2 Automatically Collected Data</h3>
+            <ul>
+                <li><strong>Location</strong>: Used to obtain local barometric pressure and weather data (while in use only). Your location is not sent to our servers.</li>
+                <li><strong>Weather Data</strong>: Barometric pressure, temperature, humidity, weather conditions (via OpenWeatherMap API)</li>
+                <li><strong>Health Data</strong> (Premium feature, with user permission only): Step count, sleep duration, heart rate (via Apple HealthKit)</li>
+            </ul>
+
+            <h3>2.3 Analytics Data</h3>
+            <ul>
+                <li><strong>Firebase Analytics</strong>: Anonymous usage statistics</li>
+                <li><strong>Firebase Crashlytics</strong>: Crash reports for stability improvement</li>
+            </ul>
+
+            <h2>3. Data Storage</h2>
+            <ul>
+                <li>Pain records, profile information, and settings are stored <strong>entirely on your device (locally)</strong>.</li>
+                <li>No personal data is transmitted to external servers (except anonymized data via Firebase Analytics/Crashlytics).</li>
+                <li>When fetching weather data, latitude and longitude are sent to the OpenWeatherMap API, but no personally identifiable information is included.</li>
+            </ul>
+
+            <h2>4. How We Use Data</h2>
+            <ul>
+                <li>Analyzing correlation between pain and barometric pressure changes</li>
+                <li>Providing pain predictions and prevention advice</li>
+                <li>Generating PDF reports (processed locally on your device)</li>
+                <li>Improving app quality and fixing bugs</li>
+            </ul>
+
+            <h2>5. Third-Party Services</h2>
+            <p>The App uses the following third-party services. Please review their respective privacy policies.</p>
+            <ul>
+                <li><strong>OpenWeatherMap</strong>: Weather data — <a href="https://openweather.co.uk/privacy-policy" target="_blank">Privacy Policy</a></li>
+                <li><strong>Firebase (Google)</strong>: Analytics, Crashlytics — <a href="https://firebase.google.com/support/privacy" target="_blank">Privacy Policy</a></li>
+                <li><strong>Apple HealthKit</strong>: Health data — <a href="https://www.apple.com/legal/privacy/" target="_blank">Apple Privacy Policy</a></li>
+            </ul>
+
+            <h2>6. Data Sharing</h2>
+            <p>The App does not sell, rent, or share your personal data with third parties. Only anonymized usage data via Firebase Analytics/Crashlytics is transmitted.</p>
+
+            <h2>7. Data Deletion</h2>
+            <ul>
+                <li>Individual records can be deleted from the history screen within the app.</li>
+                <li>Uninstalling the app will delete all data stored on your device.</li>
+            </ul>
+
+            <h2>8. Children's Privacy</h2>
+            <p>The App is not intended for children under 13. We do not knowingly collect personal information from children under 13.</p>
+
+            <h2>9. Changes to This Policy</h2>
+            <p>This policy may be updated as needed. We will notify you of significant changes through the app.</p>
+
+            <h2>10. Contact Us</h2>
+            <p>If you have any questions or requests regarding privacy, please contact us.</p>
+            <div class="contact-box">
+                <p>PainWise Support</p>
+                <p>GitHub: <a href="https://github.com/hk-882355/painwise-privacy/issues" target="_blank">Issues</a></p>
+            </div>
+        </div>
+
+        <div class="effective-date">
+            <p>Effective Date / 施行日: 2026-02-09</p>
+            <p>Last Updated / 最終更新: 2026-02-09</p>
+        </div>
+    </div>
+
+    <script>
+        function switchLang(lang) {
+            document.querySelectorAll('.section-ja, .section-en').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.lang-toggle button').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.section-' + lang).forEach(el => el.classList.add('active'));
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+    </script>
+</body>
+</html>
